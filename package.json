@@ -1,0 +1,23 @@
+{
+  "name": "game-server",
+  "version": "0.1.0",
+  "description": "> Node.js game server",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frans-de-waal/node-server.git"
+  },
+  "author": "Frans de Waal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frans-de-waal/node-server/issues"
+  },
+  "homepage": "https://github.com/frans-de-waal/node-server#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
