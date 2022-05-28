@@ -1,7 +1,7 @@
 {
   "name": "game-server",
   "version": "0.1.0",
-  "description": "> Node.js game server",
+  "description": "Node.js game server",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
