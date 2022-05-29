@@ -5,7 +5,7 @@ export function addUser(name) {
 }
 
 export function getUsers() {
-  return users.entries()
+  return Array.from(users.values())
 }
 
 export function removeUser(name) {
