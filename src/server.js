@@ -12,6 +12,8 @@ const server = http.createServer((
   routeHandler(request, response)
 })
 
-server.listen(8000)
+const port = process.env.PORT || 8000
 
-console.log("\nServer listening on port 8000...\n")
+server.listen(port)
+
+console.log(`\nServer listening on port ${port}...\n`)
