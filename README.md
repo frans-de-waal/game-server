@@ -2,6 +2,11 @@
 
 > Node.js game server
 
+## API
+
+- `login`
+- `users`
+
 ## Notes
 
 - https://www.youtube.com/watch?v=osANZ9aigIg
