@@ -1,4 +1,5 @@
 const users = new Map() // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+import UserNotFoundError from '../utils/UserNotFoundError.js'
 
 export function addUser(name) {
   users.set(name, { name })
@@ -14,4 +15,14 @@ export function removeUser(name) {
 
 export function getUser(name) {
   return users.get(name)
+}
+
+export function setUserPosition(name, position) {
+  const user = users.get(name)
+  if (!user) {
+    throw new UserNotFoundError
+  }
+
+  user.position = position
+  users.set(name, user)
 }

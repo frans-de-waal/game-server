@@ -1,14 +1,8 @@
 import { addUser } from '../stores/users.js'
+import getPostData from '../utils/getPostData.js'
 
 async function LoginHandler(request, response) {
-  // https://nodejs.dev/learn/get-http-request-body-data-using-nodejs
-  const buffers = []
-
-  for await (const chunk of request) {
-    buffers.push(chunk)
-  }
-
-  const data = JSON.parse(Buffer.concat(buffers).toString())
+  const data = await getPostData(request)
 
   addUser(data.name)
 

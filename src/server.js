@@ -1,6 +1,7 @@
 import http from 'http'
 import getRouteHandler from './utils/getRouteHandler.js'
 import getRoute from './utils/getRoute.js'
+import errorHandler from './utils/errorHandler.js'
 
 // https://nodejs.org/docs/latest-v16.x/api/http.html#httpcreateserveroptions-requestlistener
 const server = http.createServer(async (
@@ -12,11 +13,7 @@ const server = http.createServer(async (
   try {
     await routeHandler(request, response)
   } catch(error) {
-    response.statusCode = 500
-    response.setHeader('Content-Type', 'application/json')
-    response.end(JSON.stringify({
-      error: error.message
-    }))
+    errorHandler(error, response)
   }
 })
 
