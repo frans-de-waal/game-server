@@ -14,14 +14,16 @@ export function removeUser(name) {
 }
 
 export function getUser(name) {
-  return users.get(name)
-}
-
-export function setUserPosition(name, position) {
   const user = users.get(name)
   if (!user) {
     throw new UserNotFoundError
   }
+
+  return user
+}
+
+export function setUserPosition(name, position) {
+  const user = getUser(name)
 
   user.position = position
   users.set(name, user)
